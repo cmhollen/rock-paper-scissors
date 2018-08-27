@@ -5,24 +5,53 @@ function computerPlay(){
 }
 
 const computerSelection = computerPlay();
-const playerSelection = prompt().toLowerCase();
+
+let output;
+let computerScore = 0; 
+let playerScore = 0; 
 
 function playRound(playerSelection, computerSelection){
     if (playerSelection === 'rock' && computerSelection === 'Paper') {
-        return "You lose! Paper beats rock!";
+        output = "You lose this round! Paper beats rock!";
+        computerScore += 1;
     } else if (playerSelection === 'rock' && computerSelection === 'Scissors'){
-        return "You win! Rock beats scissors!";
+        output = "You win this round! Rock beats scissors!";
+        playerScore += 1;
     } else if (playerSelection === 'paper' && computerSelection === 'Scissors') {
-        return "You lose! Scissors beats paper!";
+        output = "You lose this round! Scissors beats paper!";
+        computerScore += 1;
     } else if (playerSelection === 'paper' && computerSelection === 'Rock') {
-        return "You win! Paper beats rock!";
+        output ="You win this round! Paper beats rock!";
+        playerScore += 1;
     } else if (playerSelection === 'scissors' && computerSelection === 'Rock') {
-        return "You lose! Rock beats scissors!";
+        output = "You lose this round! Rock beats scissors!";
+        computerScore += 1;
     } else if  (playerSelection === 'scissors' && computerSelection === 'Paper') {
-        return "You win! Scissors beats paper!";
+        output = "You win this round! Scissors beats paper!";
+        playerScore += 1;
     } else {
-        return "Draw";
+        output = "Draw";
     }
+    return output;
 }
 
-console.log(playRound(playerSelection, computerSelection));
+function checkScores(playerScore, computerScore){
+    if (computerScore >= 5){
+        console.log(`You lose the game!`);
+    } else if (playerScore >= 5) {
+        console.log(`You win the game!`);
+    }
+} 
+
+function game(){
+    do {
+        const playerSelection = prompt().toLowerCase();
+        console.log(playRound(playerSelection, computerSelection));
+    
+        console.log(`You: ${playerScore}, Computer: ${computerScore}`);
+    } while (computerScore < 5 && playerScore < 5)
+    
+    checkScores(playerScore, computerScore);
+}
+
+game();
