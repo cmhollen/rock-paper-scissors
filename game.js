@@ -44,14 +44,13 @@ function checkScores(playerScore, computerScore){
 } 
 
 function game(){
-    do {
-        const playerSelection = prompt().toLowerCase();
+    
+        const playerSelection = 
         console.log(playRound(playerSelection, computerSelection));
     
         console.log(`You: ${playerScore}, Computer: ${computerScore}`);
-    } while (computerScore < 5 && playerScore < 5)
+    
     
     checkScores(playerScore, computerScore);
 }
 
-game();
