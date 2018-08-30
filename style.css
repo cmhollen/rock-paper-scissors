@@ -1,0 +1,36 @@
+body {
+    text-align: center;
+}
+
+.scores{
+    display: inline-block;
+    
+}
+
+h1 {
+    color: blue;
+}
+
+.round {
+    font-weight: bold;
+    margin: 15px;
+}
+
+.weapon {
+    margin: 10px;
+}
+
+.buttons {
+    padding: 10px;
+}
+
+.weapons {
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+#result {
+    clear: both;
+    margin: 20px;
+}

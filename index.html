@@ -1,17 +1,26 @@
 <DOCTYPE! html>
     <html>
+        <head>
+            <link href="style.css" rel="stylesheet">
+        </head>
         <body>
           <h1>Rock! Paper! Scissors!</h1>
           <div class="container">
+              <div class="round">Round 1</div>
               <div class="weapon">Choose your weapon!</div>
-              <div class="btns">
-                  <button class="rock">Rock</button>
-                  <button class="paper">Paper</button>
-                  <button class="scissors">Scissors</button>
+              <div class="buttons">
+                  <button class="weapons" id="rock">Rock</button>
+                  <button class="weapons" id="paper">Paper</button>
+                  <button class="weapons" id="scissors">Scissors</button>
               </div>
               <div class="score">
-                  <p>Player:</p>
-                  <p>Computer:</p>
+                  
+                    <div class="scores" id="playerScore">Player score: 0</div>
+                    <div class="scores" id="computerScore">Computer score: 0</div>
+                  
+                  <div id="draw"></div>
+                  <div id="winner"></div>
+                  <div id="result"></div>
               </div>
           </div>
 
