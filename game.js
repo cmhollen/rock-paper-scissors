@@ -63,28 +63,34 @@ function playRound(playerSelection, computerSelection){
 function checkScores(playerScore, computerScore){
     if (computerScore >= 5){
         roundResult.textContent = `You lose the game!`;
+        roundResult.style.color = 'red';
+        roundResult.style.fontSize = '18px';
+        roundResult.style.fontWeight = 'bold';
     } else if (playerScore >= 5) {
         roundResult.textContent = `You win the game!`;
+        roundResult.style.color = 'blue';
+        roundResult.style.fontSize = '20px';
+        roundResult.style.fontWeight = 'bold';
     }
 } 
 
-
-  
 
 function game(){
     
   if (computerScore < 5 && playerScore < 5){
     roundResult.textContent = playRound(playerSelection, computerSelection);
         
-    console.log(computerSelection)
-    console.log(playerSelection)
   }
-    
-        
-    
-
-    
     checkScores(playerScore, computerScore);
-    
 }
 
+let resetGame = document.querySelector('.reset-btn');
+resetGame.addEventListener('click', reset);
+
+function reset(){
+    roundPlay.textContent = `Round 1`;
+    round = 1;
+    playScore.textContent = `Player score: 0`
+    compScore.textContent = `Computer score: 0`
+    roundResult.textContent = ' ';
+}
